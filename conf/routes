@@ -1,0 +1,33 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                   controllers.Application.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                       controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /services/getBillTypes              controllers.Application.getBillTypes()
+
+GET     /services/getAllocatedAmounts       controllers.Application.getAllocatedAmounts()
+
+GET     /services/getPurchases              controllers.Application.getPurchases(startYear:Int, startMonth:Int, startDayOfMonth:Int, endYear:Int, endMonth:Int, endDayOfMonth:Int)
+
+GET     /services/getStores                 controllers.Application.getStores()
+
+GET     /services/getBillTypePurchases      controllers.Application.getBillTypePurchases(billTypeKey:Int)
+
+GET     /services/modifyPurchase            controllers.Application.modifyPurchase(purchaseKey:Int, store:String, cost:Double, month:Int, dayOfMonth:Int, year:Int, note:String, billTypeKey:Int)
+
+GET     /services/deletePurchase            controllers.Application.deletePurchase(purchaseKey:Int)
+
+GET     /services/addPurchase               controllers.Application.addPurchase(store:String, cost:Double, month:Int, dayOfMonth:Int, year:Int, note:String, billTypeKey:Int)
+
+GET     /services/getCurrentViewItems       controllers.Application.getCurrentViewItems()
+
+GET     /services/getMatchingPurchases      controllers.Application.getMatchingPurchases(cost:Double, dateMilisec:Long)
+
+GET     /services/searchPurchases           controllers.Application.searchPurchases(startmonth:Option[Int], startdaymonth:Option[Int], startyear:Option[Int], endmonth:Option[Int], enddaymonth:Option[Int], endyear:Option[Int], billtypekey:Option[Int], storename:Option[String], cost:Option[Double], costcomparison:Option[String], costrange:Option[Double])
+
+POST    /services/upload                    controllers.Application.upload

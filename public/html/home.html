@@ -1,0 +1,32 @@
+<input type="file" id="file" name="file"/>
+<button ng-click="homeCtrl.add()">Parse File</button>
+
+Selected Date: {{ data.date | date:'yyyy-MM-dd a' }}
+
+<datetimepicker data-ng-model="data.embeddedDate"
+                data-datetimepicker-config="{ startView:'day', minView:'day' }" />
+
+<blockquote>
+    <strong>{{homeCtrl.selectedBankTransaction.store}}</strong>
+    <br />
+    {{homeCtrl.selectedBankTransaction.cost}}
+    <br />
+    <cite class="clearfix">—{{homeCtrl.selectedBankTransaction.date | date : 'medium'}}</cite>
+    <br />
+    <button ng-click="homeCtrl.previous()">Previous</button>
+    <button ng-click="homeCtrl.next()">Next</button>
+    {{homeCtrl.selectedIndex + 1}} of {{homeCtrl.bankTransactions.length}}
+</blockquote>
+
+<h4>Matches</h4>
+<ul>
+    <li ng-repeat="matchingPurchase in homeCtrl.matchingPurchases">
+        <blockquote>
+            <strong>{{matchingPurchase.store}}</strong>
+            <br />
+
+            ${{matchingPurchase.cost}}
+            <cite class="clearfix">—{{matchingPurchase.date | date : 'medium'}}</cite>
+        </blockquote>
+    </li>
+</ul>

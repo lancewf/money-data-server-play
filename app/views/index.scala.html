@@ -1,0 +1,32 @@
+@import play.api.mvc.RequestHeader
+
+@(message: String)(implicit request: RequestHeader)
+
+@main("Money Data"){
+<section ng-controller="TabController as tab">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Money Data</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{ active:tab.isSet(1) }"><a href="#" ng-click="tab.setTab(1)">Home</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container">
+        <div class="starter-template">
+            <home ng-show="tab.isSet(1)" selected="day"></home>
+        </div>
+    </div> <!-- /container -->
+</section>
+}
