@@ -6,3 +6,5 @@ For a mac:
 `brew install sbt@1`
 
 Then from the root directory run `sbt`
+
+To run the project enter `run`
