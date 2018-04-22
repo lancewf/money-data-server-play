@@ -1,0 +1,7 @@
+
+database_name = "moneydata"
+
+[http.listen]
+  port = 8080
+  bind = "127.0.0.1"
+  local_only = true

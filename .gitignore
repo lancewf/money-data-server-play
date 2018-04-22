@@ -15,3 +15,6 @@ server.pid
 .cache
 .idea/
 /project/project/target
+results/
+.sbtserver/
+.bash_history
